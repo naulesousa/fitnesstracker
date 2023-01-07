@@ -3,7 +3,7 @@ package co.naulesousa.fitnesstracker
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class imcActivity : AppCompatActivity() {
+class ImcActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc)

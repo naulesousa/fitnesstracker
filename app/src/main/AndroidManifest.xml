@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessTracker">
         <activity
-            android:name=".imcActivity"
+            android:name=".ImcActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
