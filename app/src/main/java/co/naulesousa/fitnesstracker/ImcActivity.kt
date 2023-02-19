@@ -19,7 +19,17 @@ class ImcActivity : AppCompatActivity() {
 
         val btnSend: Button = findViewById(R.id.btn_imc_send)
         btnSend.setOnClickListener {
-            
+
+        }
+    }
+
+    private fun validate(): Boolean {
+        if (editWeigth.text.toString().isNotEmpty() && editHeight.text.toString().isNotEmpty()
+            && !editWeigth.text.toString().startsWith("0")
+            && !editHeight.text.toString().startsWith("0")) {
+            return true
+        } else {
+            return false
         }
     }
 }
