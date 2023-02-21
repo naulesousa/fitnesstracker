@@ -24,9 +24,17 @@ class ImcActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.fields_message, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
+            val weight = editWeight.text.toString().toInt()
+            val height = editHeight.text.toString().toInt()
+
+            val result = calculate(weight, height)
         }
     }
 
+    private fun calculate(weight: Int, height: Int): Double {
+        return weight / ((height / 100.0) * (height / 100.0))
+    }
     private fun validate(): Boolean {
         return (editWeight.text.toString().isNotEmpty() && editHeight.text.toString().isNotEmpty()
                 && !editWeight.text.toString().startsWith("0")
