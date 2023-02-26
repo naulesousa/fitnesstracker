@@ -38,8 +38,13 @@ class ImcActivity : AppCompatActivity() {
             dialog.setTitle("Título Teste")
             dialog.setMessage(R.string.calc)
             dialog.setPositiveButton("texto botão", object : DialogInterface.OnClickListener() {
-                
+                override fun onClick(p0: DialogInterface?, p1: Int) {
+
+                }
             })
+
+            val d = dialog.create()
+            d.show()
         }
     }
 
