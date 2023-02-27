@@ -33,18 +33,13 @@ class ImcActivity : AppCompatActivity() {
 
             val result = calculate(weight, height)
 
-            val dialog = AlertDialog.Builder(this)
+            val imcResponseId = imcResponse(result)
 
-            dialog.setTitle("Título Teste")
-            dialog.setMessage(R.string.calc)
-            dialog.setPositiveButton("texto botão", object : DialogInterface.OnClickListener() {
-                override fun onClick(p0: DialogInterface?, p1: Int) {
-
-                }
-            })
-
-            val d = dialog.create()
-            d.show()
+            AlertDialog.Builder(this)
+                .setTitle(getString(R.string.imc_response, result))
+                .setMessage(imcResponseId)
+                .setPositiveButton(android.R.string.ok)
+                { p0, p1 -> }.create().show()
         }
     }
 
