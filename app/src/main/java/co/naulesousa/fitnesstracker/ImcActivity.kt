@@ -1,8 +1,10 @@
 package co.naulesousa.fitnesstracker
 
+import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -40,6 +42,9 @@ class ImcActivity : AppCompatActivity() {
                 .setMessage(imcResponseId)
                 .setPositiveButton(android.R.string.ok)
                 { p0, p1 -> }.create().show()
+
+            val service = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            service.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         }
     }
 
