@@ -1,5 +1,6 @@
 package co.naulesousa.fitnesstracker
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,7 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val MainItems = mutableListOf<MainItem>()
+        val mainItems = mutableListOf<MainItem>()
+        mainItems.add(
+            MainItem(
+                id = 1,
+                drawableId = R.drawable.ic_baseline_wb_sunny_24,
+                textStringId = R.string.label_imc,
+                color = Color.GREEN,
+            )
+        )
 
         val adapter = MainAdapter()
         rvMain = findViewById(R.id.rv_main)
