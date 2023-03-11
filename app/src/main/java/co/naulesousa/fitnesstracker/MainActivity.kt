@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        val adapter = MainAdapter()
+        val adapter = MainAdapter(mainItems)
         rvMain = findViewById(R.id.rv_main)
         rvMain.adapter = adapter
         rvMain.layoutManager = LinearLayoutManager(this)
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 //        }
     }
 
-    private inner class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
+    private inner class MainAdapter(private val mainItems: List<MainItem>) : RecyclerView.Adapter<MainViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
             val view = layoutInflater.inflate(R.layout.main_item, parent, false)
             return MainViewHolder(view)
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getItemCount(): Int {
-            return 15
+            return mainItems.size
         }
 
     }
