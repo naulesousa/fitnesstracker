@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -46,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
+            val itemCurrent = mainItems[position]
+            holder.bind(itemCurrent)
         }
 
         override fun getItemCount(): Int {
@@ -54,5 +57,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private class MainViewHolder(view: View) : RecyclerView.ViewHolder(view)
+    private class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(item: MainItem) {
+            val buttonTest: Button = itemView.findViewById(R.id.btn_item)
+        }
+    }
 }
